@@ -43,6 +43,8 @@ namespace tbUI
             Console.WriteLine("Tick");
         }
 
+
+            //login button
             private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             User player = new User();
@@ -59,7 +61,8 @@ namespace tbUI
                 else
                 {
                     //  DispatcherTimer setup                    
-                        dispatcherTimer.Start();                   
+                        dispatcherTimer.Start();
+                   // Globals.CurrentUserID;
                         player.Username = playername;
                         db.AddUser(player);
                         MainWindow mainWindow = new MainWindow();
@@ -71,10 +74,6 @@ namespace tbUI
             {
                 MessageBox.Show("Username must be in letters and number with no spaces","Username Entry Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
-
-            //TODO: if username exists, select user
-            // if username doesn't exist, insert new user
-
 
         }
     }

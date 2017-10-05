@@ -16,7 +16,11 @@ namespace tbUI
             get
             {
                 return currentUserID;
-            }           
+            }
+            set
+            {
+                currentUserID = value;
+            }
         }
     }
 }
