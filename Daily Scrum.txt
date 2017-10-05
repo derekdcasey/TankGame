@@ -1,0 +1,39 @@
+Every day, both team members write the following:
+
+date and name
+
+1. What have i done / not done since last Scrum?
+2. What will I do from now until next Scrum?
+3. Where do I need help from my teammate, teacher, or internet?
+
+2017/10/03 Alex
+<<<<<<< HEAD
+1. when the game ends display a message box that asks to play again, quit, or check high scores board
+
+
+
+
+
+
+2017/10/04 Derek
+1. Worked on the layout for the multiple windows, and gathered free resources(sfx, graphics)
+2. 	-Start coding basic gameplay elements
+	-add 6 user stories, and break them down
+3. Going to need help on the final layout design, as well as how to deal with multiplayer
+
+=======
+- when the game ends display a message box that asks to play again, quit, or check high scores board
+- WAITING FOR OTHER PLAYER message across screen at beginning
+
+2017/10/04 Alex
+1. Designed state machine. updated database tables and project proposal.
+2. Connect WPF page to Azure database. Create at least 6 user stories.  
+3. How to connect two instances of the game together
+
+
+10/5/2017 Derek
+
+1.worked on implementing the database, and finalized the ui
+2.I plan on starting the game logic
+3. i might need help finding a formula to get the direction of the tank barrell
+>>>>>>> 366a28ffbe896a63b93f0eb540614d08c78904f8
