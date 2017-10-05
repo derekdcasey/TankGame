@@ -1,0 +1,62 @@
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\bin\Debug\tbUI.exe.config
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\bin\Debug\tbUI.exe
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\bin\Debug\tbUI.pdb
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\tbUI.csprojResolveAssemblyReference.cache
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\MainWindow.g.cs
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\App.g.cs
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\tbUI_MarkupCompile.cache
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\tbUI_MarkupCompile.lref
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\MainWindow.baml
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\tbUI.g.resources
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\tbUI.Properties.Resources.resources
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\tbUI.csproj.GenerateResource.Cache
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\tbUI.exe
+c:\users\lenovo\documents\visual studio 2017\Projects\tbUI\tbUI\obj\Debug\tbUI.pdb
+I:\tbUI\tbUI\bin\Debug\tbUI.exe.config
+I:\tbUI\tbUI\bin\Debug\tbUI.exe
+I:\tbUI\tbUI\bin\Debug\tbUI.pdb
+I:\tbUI\tbUI\obj\Debug\tbUI.csprojResolveAssemblyReference.cache
+I:\tbUI\tbUI\obj\Debug\MainWindow.g.cs
+I:\tbUI\tbUI\obj\Debug\App.g.cs
+I:\tbUI\tbUI\obj\Debug\tbUI_MarkupCompile.cache
+I:\tbUI\tbUI\obj\Debug\tbUI_MarkupCompile.lref
+I:\tbUI\tbUI\obj\Debug\MainWindow.baml
+I:\tbUI\tbUI\obj\Debug\tbUI.g.resources
+I:\tbUI\tbUI\obj\Debug\tbUI.Properties.Resources.resources
+I:\tbUI\tbUI\obj\Debug\tbUI.csproj.GenerateResource.Cache
+I:\tbUI\tbUI\obj\Debug\tbUI.csproj.CoreCompileInputs.cache
+I:\tbUI\tbUI\obj\Debug\tbUI.exe
+I:\tbUI\tbUI\obj\Debug\tbUI.pdb
+C:\Users\ipd\Repos\tbUI\tbUI\bin\Debug\tbUI.exe.config
+C:\Users\ipd\Repos\tbUI\tbUI\bin\Debug\tbUI.exe
+C:\Users\ipd\Repos\tbUI\tbUI\bin\Debug\tbUI.pdb
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\LoginPage.g.cs
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\MainWindow.g.cs
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\App.g.cs
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\tbUI_MarkupCompile.cache
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\tbUI_MarkupCompile.lref
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\LoginPage.baml
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\MainWindow.baml
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\tbUI.g.resources
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\tbUI.Properties.Resources.resources
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\tbUI.csproj.GenerateResource.Cache
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\tbUI.csproj.CoreCompileInputs.cache
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\tbUI.exe
+C:\Users\ipd\Repos\tbUI\tbUI\obj\Debug\tbUI.pdb
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\bin\Debug\tbUI.exe.config
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\bin\Debug\tbUI.exe
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\bin\Debug\tbUI.pdb
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\tbUI.csprojResolveAssemblyReference.cache
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\LoginPage.g.cs
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\MainWindow.g.cs
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\App.g.cs
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\tbUI_MarkupCompile.cache
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\tbUI_MarkupCompile.lref
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\LoginPage.baml
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\MainWindow.baml
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\tbUI.g.resources
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\tbUI.Properties.Resources.resources
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\tbUI.csproj.GenerateResource.Cache
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\tbUI.csproj.CoreCompileInputs.cache
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\tbUI.exe
+D:\Alex\DotNET Development\Sources\TankBusters\tbUI\tbUI\obj\Debug\tbUI.pdb
