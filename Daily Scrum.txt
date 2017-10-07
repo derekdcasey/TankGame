@@ -38,7 +38,19 @@ date and name
 3. i might need help finding a formula to get the direction of the tank barrell
 >>>>>>> 366a28ffbe896a63b93f0eb540614d08c78904f8
 
+
 05/10/2017 Alex
-1. Created Database and completed login window adding users to database
-2. Start working on game class
-3. how to implement graphical functionality
+1. Completed login page with validation
+2. start working on state machine
+3. research dispatchertimer
+
+
+06/10/2017 Alex
+1. researched dispatcher timer, attempted to make relevant SQL statements
+2. try to implement state machine
+3. research proper implementation of state machine in C# and SQL
+
+07/10/2017 Alex
+1. researched state machinne for c# and SQL
+2. try to create classes and triggers in SQL for state machine
+3. research proper implementation of triggers
