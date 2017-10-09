@@ -32,7 +32,7 @@ namespace tbUI
            
         }
 
-        User user = new User();
+        GameLogic user = new GameLogic();
         //dispatch timer tick method
         public void DispatchTimer_Tick()
         {

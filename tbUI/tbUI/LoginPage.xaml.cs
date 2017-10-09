@@ -31,15 +31,14 @@ namespace tbUI
             db.OpenConnection();
             InitializeComponent();
             dispatcherTimer.Tick += DispatcherTimer_Tick;
-            dispatcherTimer.Interval = new TimeSpan(0, 0, 10);
+            dispatcherTimer.Interval = new TimeSpan(0, 0, 5);
            
         }
 
         //heartbeat with DispatchTimer to update game records every 10 seconds
         void DispatcherTimer_Tick(object sender, EventArgs e)
         {
-            //  db.ActivePlayerAdded();
-            
+            db.GetActiveGame();
             Console.WriteLine("Tick");
         }
 
@@ -47,7 +46,7 @@ namespace tbUI
             //login button
             private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            User player = new User();
+            GameLogic player = new GameLogic();
 
             string playername = tbUserLogin.Text;
 

@@ -35,7 +35,7 @@ namespace tbUI
             {
                 while (reader.Read())
                 {
-                    string msg = reader["TimeStamp"] + ": " + reader["UserName"] + ": " + reader["Message"];
+                    string msg = reader["timestamp"] + ": " + reader["username"] + ": " + reader["message"];
                     msgList.Add(msg);
                 }
                 return msgList;
@@ -46,7 +46,7 @@ namespace tbUI
         public void AddMessage(string uN, string msg)
         {
 
-            SqlCommand insertCommand = new SqlCommand("INSERT INTO ChatLogs (UserName,Message) VALUES (@0,@1)", conn);
+            SqlCommand insertCommand = new SqlCommand("INSERT INTO ChatLogs (username,message) VALUES (@0,@1)", conn);
             // In the command, there are some parameters denoted by @, you can 
             // change their value on a condition, in my code they're hardcoded.
             insertCommand.Parameters.Add(new SqlParameter("0", uN));
@@ -57,9 +57,10 @@ namespace tbUI
             insertCommand.ExecuteNonQuery();
         }
 
+        //delete messages
         public void DeleteMsgs(string user)
         {
-            SqlCommand insertCommand = new SqlCommand("DELETE FROM ChatLogs WHERE UserName=@0", conn);
+            SqlCommand insertCommand = new SqlCommand("DELETE FROM ChatLogs WHERE Username=@0", conn);
             // In the command, there are some parameters denoted by @, you can 
             // change their value on a condition, in my code they're hardcoded.
             insertCommand.Parameters.Add(new SqlParameter("0", user));
@@ -70,65 +71,59 @@ namespace tbUI
             insertCommand.ExecuteNonQuery();
         }
 
-        //method to execute queries
-        public void ExecuteQueries(string Query_)
-        {
-            try
-            {
-                SqlCommand cmd = new SqlCommand(Query_, conn);
-                cmd.ExecuteNonQuery();
-            }
-            catch (SqlException ex)
-            {
-                Console.Write("EXCEPTION: " + ex.Message);
-            }
-        }
         //TODO: INSERT, SELECT STATEMENTS 
 
         //add username
         //heartbeat with DispatchTimer to check game records every 10 seconds
-        public int AddUser(User u)
+        public int AddUser(GameLogic u)
         {
-          //  try {
-                SqlCommand insertcmd = new SqlCommand("INSERT INTO ActivePlayers (Username) VALUES (@Username); SELECT SCOPE_IDENTITY();", conn);
-                insertcmd.Parameters.Add(new SqlParameter("@Username", u.Username));
+            SqlCommand insertcmd = new SqlCommand("INSERT INTO ActivePlayers (username) VALUES (@username); SELECT SCOPE_IDENTITY();", conn);
+            insertcmd.Parameters.Add(new SqlParameter("@username", u.Username));
             // insertcmd.ExecuteNonQuery();
             int NewPlayerId = Convert.ToInt32(insertcmd.ExecuteScalar());
-                
-         //   }
-            //catch (SqlException ex)
-            //{
-            //    Console.Write("EXCEPTION: " + ex.Message);
-            //}
+
             return NewPlayerId;           
         }
 
-        //heartbeat with DispatchTimer to update game records every 10 seconds
-        //public int ActivePlayerAdded()
-        //{
-        //   return NewPlayerId;
-        //}
-       
-  
+
+        //heartbeat with DispatcherTimer to update game records every 10 seconds
 
 
 
-            //update player health status and action in game
+
+
+
+        //update player health status and action in game
         //public void UpdateGame(Game g)
         //{
 
         //}
 
-
-        //create method for highscore board. 
-        //SELECT Username, wins, losses, gamesPlayed FROM Users ORDER BY wins DESC
-
-        //method to read data. datareader
-        public SqlDataReader DataReader(string Query_)
+        //check if games exist       
+        public int GetActiveGame()
         {
-            SqlCommand cmd = new SqlCommand(Query_, conn);
-            SqlDataReader dr = cmd.ExecuteReader();
-            return dr;
+            int GameId;
+
+            SqlCommand command = new SqlCommand("SELECT gameId FROM Game; SELECT SCOPE_IDENTITY();", conn);
+            GameId = Convert.ToInt32(command.ExecuteScalar());
+
+            //read until a game is found
+            using (SqlDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    GameId = 0;
+                }
+                 return GameId;
+            }
+        }
+
+
+        // get action from game
+        public void GetAction()
+        {
+            SqlCommand command = new SqlCommand("SELECT TOP 1 action FROM Game ORDER BY gameId DESC", conn);
+            command.ExecuteNonQuery();               
         }
     }
 }
