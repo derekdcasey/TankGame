@@ -1,0 +1,7 @@
+D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficLightStateMachine\bin\Debug\TrafficLightStateMachine.exe.config
+D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficLightStateMachine\bin\Debug\TrafficLightStateMachine.exe
+D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficLightStateMachine\bin\Debug\TrafficLightStateMachine.pdb
+D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.csprojResolveAssemblyReference.cache
+D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.csproj.CoreCompileInputs.cache
+D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.exe
+D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.pdb
