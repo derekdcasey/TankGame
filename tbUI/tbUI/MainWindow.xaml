@@ -143,6 +143,40 @@
                     </TransformGroup>
                 </Rectangle.RenderTransform>
             </Rectangle>
+            <Rectangle x:Name="P1Turret" Height="6" Canvas.Left="98" Stroke="Black" Canvas.Top="669" Width="23">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF516307" Offset="0"/>
+                        <GradientStop Color="#FF6D8800" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="P1Tank" Height="50" Canvas.Left="38" Stroke="Black" Canvas.Top="648" Width="72" StrokeThickness="0">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="TankRight.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="P1Turret_Copy" Height="6" Canvas.Left="1167" Stroke="Black" Canvas.Top="669" Width="22">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF516307" Offset="0"/>
+                        <GradientStop Color="#FF6D8800" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="P1Tank_Copy" Height="50" Canvas.Left="1178" Stroke="Black" Canvas.Top="648" Width="73" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="TankRight.png"/>
+                </Rectangle.Fill>
+            </Rectangle>
 
         </Canvas>
         <Grid Grid.Row="1" Background="#FF3C3A38" Margin="0,24,0,0">

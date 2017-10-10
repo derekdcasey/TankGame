@@ -77,3 +77,20 @@ D:\Documents\IPD-10\DotNET Development\Sources\TankProject\tbUI\tbUI\obj\Debug\t
 D:\Documents\IPD-10\DotNET Development\Sources\TankProject\tbUI\tbUI\obj\Debug\tbUI.csproj.CoreCompileInputs.cache
 D:\Documents\IPD-10\DotNET Development\Sources\TankProject\tbUI\tbUI\obj\Debug\tbUI.exe
 D:\Documents\IPD-10\DotNET Development\Sources\TankProject\tbUI\tbUI\obj\Debug\tbUI.pdb
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\bin\Debug\tbUI.exe.config
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\bin\Debug\tbUI.exe
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\bin\Debug\tbUI.pdb
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\tbUI.csprojResolveAssemblyReference.cache
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\LoginPage.g.cs
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\MainWindow.g.cs
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\App.g.cs
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\tbUI_MarkupCompile.cache
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\tbUI_MarkupCompile.lref
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\LoginPage.baml
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\MainWindow.baml
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\tbUI.g.resources
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\tbUI.Properties.Resources.resources
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\tbUI.csproj.GenerateResource.Cache
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\tbUI.csproj.CoreCompileInputs.cache
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\tbUI.exe
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\tbUI.pdb
