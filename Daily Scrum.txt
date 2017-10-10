@@ -54,3 +54,12 @@ date and name
 1. researched state machinne for c# and SQL
 2. try to create classes and triggers in SQL for state machine
 3. research proper implementation of triggers
+
+
+10/10/2017 Derek
+
+1.progressed with the game logic as well as started creating a lobby to test out some sql statements
+2.Continue with the game logic and lobby
+3.
+-correctly position graphics on the canvas
+-implement the lobby code with the state machine
