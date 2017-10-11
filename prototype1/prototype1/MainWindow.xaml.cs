@@ -97,9 +97,7 @@ namespace prototype1
             ball.Margin = new Thickness(newLocationX, newLocationY, 0, 0);
             
             
-            }
-          
-            
+            }            
         }
 
        
@@ -154,11 +152,6 @@ namespace prototype1
             
 
 
-
-
-
-
-
             switch (currentKey)
             {
                 case "up":
@@ -184,26 +177,20 @@ namespace prototype1
                         Point P1Barrel = ball.PointToScreen(new Point(0, 0));
                         SetLocation(smoke, new Point(GetLocation(player).X, (GetLocation(player).Y - (smoke.ActualHeight/2))));
                         smoke.Visibility = Visibility.Visible;
-                       
-                        MoveImage();
-                        
-                    }
-                        
+                     
+                        MoveImage();                       
+                    }                       
                     break;
                 default:
                     if (hasFired)
                     {
                     currentKey = "space";
                     }
-
-                    break;
-           
+                    break;           
             }
            
             rotateTransform1 = new RotateTransform(rotateRadian);
             player.RenderTransform = rotateTransform1;
-            
-
         }
 
         private void ResetP1Ball()
@@ -245,16 +232,11 @@ namespace prototype1
 
 
             if (myRect.IntersectsWith(floorRect))
-            {
-               
+            {               
                 return true;
-                
-
             }
             else
                 return false;
-
-
         }
 
         Point GetLocation(Rectangle obj)
@@ -320,7 +302,13 @@ namespace prototype1
                     currentKey = "space";
                    
                     hasFired = true;
-                    
+
+                    //saving action to database  
+                    string[] arr = { speed.ToString(), rotateRadian.ToString()};
+                    Globals.game.P1Action = string.Join(",", arr);
+                    Globals.game.P2Action = string.Join(",", arr);
+
+
                     DoubleAnimation da = new DoubleAnimation();
                     da.From = 1;
                     da.To = 0;
@@ -361,15 +349,7 @@ namespace prototype1
                     currentKey = "";
                 if (e.Key == Key.Left)
                     currentKey = "";
-           
-
-
-
-
-
-        }
-
-       
+        }      
     }
 
 

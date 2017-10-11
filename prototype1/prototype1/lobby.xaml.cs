@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,12 +39,14 @@ namespace prototype1
             lobbyTimer.Start();
         }
 
+
         private void LobbyLoop(object sender, EventArgs e)
         {
             ReloadPlayerList();
             ReloadChatView();
             
         }
+
 
         void ReloadPlayerList()
         {
@@ -56,6 +59,7 @@ namespace prototype1
             }
         }
 
+
         void ReloadGameList()
         {
             List<Game> gList = db.GetAllGames();
@@ -66,6 +70,7 @@ namespace prototype1
                 lvGames.Items.Add(g);
             }
         }
+
 
         void ReloadChatView()
         {
@@ -94,32 +99,28 @@ namespace prototype1
             
         }
             
-           
-           
-
-
-            
-            
-
-
-
 
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-
-            db.DeleteMsgs(p.username);
+            //delete only if 
+            if(p.username != null)
+            {
+                db.DeleteMsgs(p.username);
+            }                   
         }
+
 
         private void btnCreateGame_Click(object sender, RoutedEventArgs e)
         {
             Game g = new Game();
-            
-            Globals.game = g;
-            g.action = "waiting";
            
+            Globals.game = g;
+            g.P1Action = "waiting";
+          //  Globals.player = p;           
+            p.PlayerNumber = 1;
             db.AddGame2(p, g);
-            MessageBox.Show(p.id.ToString() + " " + g.action);
+            MessageBox.Show("Add Globals" + p.PlayerNumber);
             ReloadGameList();
            
         }
@@ -142,11 +143,15 @@ namespace prototype1
             ReloadChatView();
         }
 
+
+
         private void lvActivePlayers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ActivePlayer p = (ActivePlayer)lvActivePlayers.SelectedItem;
             tbPlayerId.Text = p.id.ToString();
         }
+
+
 
         private void btnJoinGame_Click(object sender, RoutedEventArgs e)
         {
@@ -156,6 +161,8 @@ namespace prototype1
             ReloadGameList();
 
         }
+
+
 
         private void btnRefresh_Click(object sender, RoutedEventArgs e)
         {

@@ -1,0 +1,69 @@
+
+Messages:
+
+p1:newgamewaitingforp2
+
+p2:ready
+
+p1:takesturn
+
+p1:shooting:120:39
+
+p2:takesturn
+
+p2:shooting:110:29
+
+
+
+
+Messages that can happen anytime:
+
+p1:gameover:p1won
+p2:gameover:p2won
+
+p1:exitedgame
+p2:exitedgame
+
+
+
+class Message {
+	Message(String strMessage) {
+            // parse message
+		
+	}
+	ActionType Action;
+	enum ActionType { Shooting, Gameover, Exitedgame, Ready }
+        double shootAngle;
+	double shootSpeed;
+}
+
+
+public void int PlayerNumber = 1 or 2;
+
+
+public void TimerCall() {
+// this method is called every 3 seconds
+
+   Message msg = getMessageFromOtherPlayer();
+   if (msg != null)  {
+        switch (msg.Action) {
+            case Ready: { // other player joined the game
+		
+            }
+	    case Shooting: {
+		
+            }
+        }
+   }
+   // other things to do in the timer?
+
+}
+
+
+Have a separate timer for animations, e.g. every 50ms
+
+
+-both players ready to join game inside the lobby
+- display message box when both players 
+-p1 reads p2 action
+-p2 reads p1 action

@@ -10,7 +10,7 @@ namespace prototype1
 
     class Database
     {
-        static string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Code\Servers\prototypeDB.mdf;Integrated Security=True;Connect Timeout=30";
+        static string connString = @"Server=tcp:apoole.database.windows.net,1433;Initial Catalog=tankdb;Persist Security Info=False;User ID=sqladmin;Password=tankDatabase1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         private SqlConnection conn;
 
         public Database()
@@ -128,7 +128,8 @@ namespace prototype1
             SqlCommand insertCommand = new SqlCommand("INSERT INTO Game (Action) VALUES (@0)", conn);
             // In the command, there are some parameters denoted by @, you can 
             // change their value on a condition, in my code they're hardcoded.
-            insertCommand.Parameters.Add(new SqlParameter("0", g.action));
+            insertCommand.Parameters.Add(new SqlParameter("0", g.P1Action));
+            insertCommand.Parameters.Add(new SqlParameter("0", g.P2Action));
 
             // Execute the command, and print the values of the columns affected through
             // the command executed.
@@ -138,12 +139,11 @@ namespace prototype1
         public void AddGame2(ActivePlayer p, Game g)
         {
            
-            SqlCommand insertCommand = new SqlCommand("INSERT INTO Game (P1id, Action) VALUES (@0, @1)", conn);
+            SqlCommand insertCommand = new SqlCommand("INSERT INTO Game (P1id, P1Action) VALUES (@id, @p1)", conn);
             // In the command, there are some parameters denoted by @, you can 
             // change their value on a condition, in my code they're hardcoded.
-            insertCommand.Parameters.Add(new SqlParameter("0", p.id));
-            insertCommand.Parameters.Add(new SqlParameter("1", g.action));
-
+            insertCommand.Parameters.Add(new SqlParameter("id", p.id));
+            insertCommand.Parameters.Add(new SqlParameter("p1", g.P1Action));
             // Execute the command, and print the values of the columns affected through
             // the command executed.
             insertCommand.ExecuteNonQuery();
@@ -174,7 +174,8 @@ namespace prototype1
                 {
                     Game g = new Game();
                     g.id = (int)reader["Id"];
-                    g.action = (string)reader["Action"];
+                    g.P1Action = (string)reader["P1Action"];
+                    g.P2Action = (string)reader["P2Action"];
                     g.p1Id = (int)reader["P1id"];
                     g.p2Id = (int)reader["P2id"];
                     g.p1Hp = (int)reader["P1hp"];
@@ -241,30 +242,48 @@ namespace prototype1
         
         public String ReadCurrentAction(Game g)
         {
+           string action;
+
             SqlCommand command = new SqlCommand("SELECT * FROM Game WHERE Id = @0", conn);
             command.Parameters.Add(new SqlParameter("0",g.id));
+
+            //TODO: IF PLAYER 1 THEN READ P2 ACTION
+            if(Globals.player.PlayerNumber == 1) { 
             using (SqlDataReader reader = command.ExecuteReader())
             {
                 while (reader.Read())
-                {
-
-
-                    
-                    g.action = (string)reader["Action"];
-                    
-
-
-                }
-                return g.action;
+                {                
+                    g.P2Action = (string)reader["P2Action"];
+              }
+               action = g.P2Action;
             }
+            }
+            //TODO: IF PLAYER 2 THEN READ P1 ACTION
+            if (Globals.player.PlayerNumber == 2)
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        g.P1Action = (string)reader["P1Action"];
+                    }
+                    action = g.P1Action;
+                }
+            }
+            return null;
         }
+        
+
+
         public void UpdateAction(Game g)
         {
             SqlCommand cmd = new SqlCommand("UPDATE Game SET Username=@0 WHERE id=@1", conn);
-            cmd.Parameters.Add(new SqlParameter("0", g.action));
+            cmd.Parameters.Add(new SqlParameter("0", g.P1Action));
+            cmd.Parameters.Add(new SqlParameter("0", g.P2Action));
             cmd.Parameters.Add(new SqlParameter("1", g.id));
 
         }
+
 
         //Chat LOG//////////////////
 
@@ -272,7 +291,7 @@ namespace prototype1
 
         public List<string> GetAllMessages ()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM [Table] ORDER BY Id", conn);
+            SqlCommand command = new SqlCommand("SELECT * FROM ChatLogs ORDER BY Id", conn);
             List<string> msgList = new List<string>();
             
 
@@ -298,7 +317,7 @@ namespace prototype1
             
 
 
-            SqlCommand insertCommand = new SqlCommand("INSERT INTO [Table] (Username,Message) VALUES (@0,@1)", conn);
+            SqlCommand insertCommand = new SqlCommand("INSERT INTO ChatLogs (Username,Message) VALUES (@0,@1)", conn);
             // In the command, there are some parameters denoted by @, you can 
             // change their value on a condition, in my code they're hardcoded.
             insertCommand.Parameters.Add(new SqlParameter("0", uN));
@@ -313,7 +332,7 @@ namespace prototype1
 
         public void DeleteMsgs(string user)
         {
-            SqlCommand insertCommand = new SqlCommand("DELETE FROM [Table] WHERE Username=@0", conn);
+            SqlCommand insertCommand = new SqlCommand("DELETE FROM ChatLogs WHERE Username=@0", conn);
             // In the command, there are some parameters denoted by @, you can 
             // change their value on a condition, in my code they're hardcoded.
             insertCommand.Parameters.Add(new SqlParameter("0", user));

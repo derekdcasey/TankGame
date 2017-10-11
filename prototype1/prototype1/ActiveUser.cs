@@ -12,6 +12,10 @@ namespace prototype1
         public string username { get; set; }
         public DateTime timestamp { get; set; }
 
+        public int PlayerNumber { get; set; }
+
+
+
         //private static ActivePlayer instance;
 
         //private ActivePlayer() { }

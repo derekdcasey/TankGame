@@ -10,7 +10,7 @@ namespace prototype1
 
     class Database
     {
-        static string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Code\Servers\prototypeDB.mdf;Integrated Security=True;Connect Timeout=30";
+        static string connString = @"Server=tcp:apoole.database.windows.net,1433;Initial Catalog=tankdb;Persist Security Info=False;User ID=sqladmin;Password=tankDatebase1;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         private SqlConnection conn;
 
         public Database()
@@ -272,7 +272,7 @@ namespace prototype1
 
         public List<string> GetAllMessages ()
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM [Table] ORDER BY Id", conn);
+            SqlCommand command = new SqlCommand("SELECT * FROM ChatLogs ORDER BY Id", conn);
             List<string> msgList = new List<string>();
             
 
@@ -298,7 +298,7 @@ namespace prototype1
             
 
 
-            SqlCommand insertCommand = new SqlCommand("INSERT INTO [Table] (Username,Message) VALUES (@0,@1)", conn);
+            SqlCommand insertCommand = new SqlCommand("INSERT INTO ChatLogs (Username,Message) VALUES (@0,@1)", conn);
             // In the command, there are some parameters denoted by @, you can 
             // change their value on a condition, in my code they're hardcoded.
             insertCommand.Parameters.Add(new SqlParameter("0", uN));
@@ -313,7 +313,7 @@ namespace prototype1
 
         public void DeleteMsgs(string user)
         {
-            SqlCommand insertCommand = new SqlCommand("DELETE FROM [Table] WHERE Username=@0", conn);
+            SqlCommand insertCommand = new SqlCommand("DELETE FROM ChatLogs WHERE Username=@0", conn);
             // In the command, there are some parameters denoted by @, you can 
             // change their value on a condition, in my code they're hardcoded.
             insertCommand.Parameters.Add(new SqlParameter("0", user));

@@ -25,6 +25,7 @@ namespace prototype1
 
         ActivePlayer p;
         DispatcherTimer lobbyTimer = new DispatcherTimer();
+
         public lobby()
         {
             db = new Database();
@@ -38,7 +39,7 @@ namespace prototype1
             lobbyTimer.Start();
         }
 
-        private void LobbyLoop(object sender, EventArgs e)
+        void LobbyLoop(object sender, EventArgs e)
         {
             ReloadPlayerList();
             ReloadChatView();
