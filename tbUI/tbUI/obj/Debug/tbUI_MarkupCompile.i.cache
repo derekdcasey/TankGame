@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Code\TankGame\tbUI\tbUI\obj\Debug\
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\
 tbUI
 none
 false
 DEBUG;TRACE
-D:\Code\TankGame\tbUI\tbUI\App.xaml
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\App.xaml
 2-2119603755
 2-1560141776
-14-811271748
+141909430562
 13738642453
 LoginPage.xaml;MainWindow.xaml;
 
-False
+True
 
