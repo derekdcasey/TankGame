@@ -68,3 +68,11 @@ date and name
 3.
 -correctly position graphics on the canvas
 -implement the lobby code with the state machine
+
+
+10/11/2017 Derek
+1.
+-Fixed the parabolic trajectory and added logic to the main project
+-trying to fix collision and canon ball instantiation
+2.continue working on collision and instantiation
+3.-implement the lobby code with the state machine
