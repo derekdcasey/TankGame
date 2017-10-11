@@ -19,8 +19,8 @@ namespace tbUI
         //open connection string
         public void OpenConnection()
         {
-            conn = new SqlConnection(connString);
-            conn.Open();
+          conn = new SqlConnection(connString);
+          conn.Open();
         }
 
 
