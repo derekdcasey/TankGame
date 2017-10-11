@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:tbUI"
         mc:Ignorable="d"
-        Title="Tank Busters" Height="1039.204" Width="1394.285" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+        Title="Tank Busters" Height="768" Width="1200
+        " ResizeMode="NoResize" WindowStartupLocation="CenterScreen" KeyUp="Window_KeyUp" KeyDown="Window_KeyDown"
+        >
 
 
     <Grid>
@@ -13,13 +15,139 @@
             <RowDefinition Height="3*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Canvas Grid.Row="0" Margin="0,0,0,233" Grid.RowSpan="2">
+        <Canvas x:Name="c1" Grid.Row="0" Margin="0,0,0,165" Grid.RowSpan="2">
 
             <Canvas.Background>
                 <ImageBrush ImageSource="TankGameBG.png"/>
             </Canvas.Background>
-            <Image Height="253" Canvas.Left="399" Canvas.Top="445" Width="598" Source="Mountain.png" Stretch="Fill"/>
-            <Rectangle x:Name="rectGround" Height="79" Canvas.Top="698" Width="1388">
+            <Rectangle x:Name="rectCollider2" Height="40" Canvas.Left="538" Canvas.Top="379" Width="383" RenderTransformOrigin="0.5,0.5" Fill="#FF766470">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-138.518"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="rectCollider1" Height="40" Canvas.Left="272" Canvas.Top="380" Width="383" RenderTransformOrigin="0.5,0.5" Fill="#FF76636E">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-40.534"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="rectP2_hp1_Copy" Height="59" Canvas.Left="1095" Canvas.Top="44" Width="14" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="0.5"/>
+                        <SkewTransform AngleX="-20"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF320000" Offset="0"/>
+                        <GradientStop Color="#FF130000" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="rectP2_hp2_Copy" Height="35" Canvas.Left="1120" Canvas.Top="51" Width="14" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1.2"/>
+                        <SkewTransform AngleX="-20"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF320000" Offset="0"/>
+                        <GradientStop Color="#FF130000" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="rectP2_hp3_Copy" Height="35" Canvas.Left="1146" Canvas.Top="45" Width="14" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1.5"/>
+                        <SkewTransform AngleX="-20"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF320000" Offset="0"/>
+                        <GradientStop Color="#FF130000" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Rectangle x:Name="rectP1hp_1_Copy" Height="59" Canvas.Left="39" Canvas.Top="30" Width="14" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="20"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF130000" Offset="0"/>
+                        <GradientStop Color="#FF380303" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="rectP1hp_2_Copy" Height="35" Canvas.Left="65" Canvas.Top="50" Width="14" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1.2"/>
+                        <SkewTransform AngleX="20"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF130000" Offset="0"/>
+                        <GradientStop Color="#FF380303" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="rectP1hp_3_Copy" Height="35" Canvas.Left="89" Canvas.Top="54" Width="14" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleX="20"/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF130000" Offset="0"/>
+                        <GradientStop Color="#FF380303" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Rectangle x:Name="ball_P2" Height="9" Canvas.Left="1085" Stroke="Black" Canvas.Top="475" Width="9" RadiusY="8" RadiusX="8">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF6E6E6E" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Image Height="253" Canvas.Left="302" Canvas.Top="274" Width="598" Source="Mountain.png" Stretch="Fill"/>
+            <Rectangle x:Name="rectGround" Height="68" Canvas.Top="507" Width="1194">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="Ground.png"/>
                 </Rectangle.Fill>
@@ -73,7 +201,7 @@
                 </Rectangle.Fill>
             </Rectangle>
             <Label x:Name="lblPlayer1Name" Content="Player1" Canvas.Left="50" Canvas.Top="89" Foreground="White" Height="35" Width="93" FontSize="18" FontFamily="Franklin Gothic Demi"/>
-            <Rectangle x:Name="rectP2_hp1" Height="59" Canvas.Left="1278" Canvas.Top="44" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="rectP2_hp1" Height="59" Canvas.Left="1095" Canvas.Top="44" Width="14" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="0.5"/>
@@ -89,7 +217,7 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="rectP2_hp2" Height="35" Canvas.Left="1303" Canvas.Top="51" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="rectP2_hp2" Height="35" Canvas.Left="1120" Canvas.Top="51" Width="14" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="1.2"/>
@@ -105,7 +233,7 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="rectP2_hp3" Height="35" Canvas.Left="1329" Canvas.Top="45" Width="14" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="rectP2_hp3" Height="35" Canvas.Left="1146" Canvas.Top="45" Width="14" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="1.5"/>
@@ -121,29 +249,9 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Label x:Name="lblPlayer2Name" Content="Player2" Canvas.Left="1274" Canvas.Top="89" Foreground="White" Height="35" Width="93" FontSize="18" FontFamily="Franklin Gothic Demi"/>
-            <TextBlock x:Name="txtGameStatus" Canvas.Left="303" TextWrapping="Wrap" Text="Waiting for other player..." Canvas.Top="357" Height="111" Width="828" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Franklin Gothic Medium" FontSize="72"/>
-            <Rectangle x:Name="rectCollider1" Height="40" Canvas.Left="373" Canvas.Top="570" Width="383" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-40.534"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle x:Name="rectCollider2" Height="40" Canvas.Left="639" Canvas.Top="570" Width="383" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-138.518"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle x:Name="P1Turret" Height="6" Canvas.Left="98" Stroke="Black" Canvas.Top="669" Width="23">
+            <Label x:Name="lblPlayer2Name" Content="Player2" Canvas.Left="1091" Canvas.Top="89" Foreground="White" Height="35" Width="93" FontSize="18" FontFamily="Franklin Gothic Demi"/>
+            <TextBlock x:Name="txtGameStatus" Canvas.Left="206" TextWrapping="Wrap" Text="Waiting for other player..." Canvas.Top="145" Height="111" Width="828" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Franklin Gothic Medium" FontSize="72"/>
+            <Rectangle x:Name="P1Turret" Height="6" Canvas.Left="98" Stroke="Black" Canvas.Top="478" Width="23" RenderTransformOrigin="-0.014,0.5">
                 <Rectangle.Fill>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF516307" Offset="0"/>
@@ -151,12 +259,12 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="P1Tank" Height="50" Canvas.Left="38" Stroke="Black" Canvas.Top="648" Width="72" StrokeThickness="0">
+            <Rectangle x:Name="P1_tank" Height="50" Canvas.Left="37" Stroke="Black" Canvas.Top="457" Width="72" StrokeThickness="0">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="TankRight.png"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="P1Turret_Copy" Height="6" Canvas.Left="1167" Stroke="Black" Canvas.Top="669" Width="22">
+            <Rectangle x:Name="P1Turret_Copy" Height="6" Canvas.Left="1069" Stroke="Black" Canvas.Top="477" Width="22" RenderTransformOrigin="1,0.472">
                 <Rectangle.Fill>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF516307" Offset="0"/>
@@ -164,7 +272,7 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="P1Tank_Copy" Height="50" Canvas.Left="1178" Stroke="Black" Canvas.Top="648" Width="73" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
+            <Rectangle x:Name="P2_tank" Height="50" Canvas.Left="1080" Stroke="Black" Canvas.Top="456" Width="73" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="-1"/>
@@ -177,37 +285,37 @@
                     <ImageBrush ImageSource="TankRight.png"/>
                 </Rectangle.Fill>
             </Rectangle>
+            <Image x:Name="explosion" Height="100" Canvas.Left="277" Canvas.Top="527" Width="100" Source="explosion08.png" Visibility="Hidden"/>
+            <Image x:Name="smoke" Height="100" Canvas.Left="98" Canvas.Top="623" Width="100" Source="whitePuff01.png" Opacity="0.6" Visibility="Hidden"/>
 
         </Canvas>
-        <Grid Grid.Row="1" Background="#FF3C3A38" Margin="0,24,0,0">
+        <Grid Grid.Row="1" Background="#FF3C3A38" Margin="0,20,0,0">
 
-            <Rectangle HorizontalAlignment="Left" Height="208" Margin="676,10,0,0" VerticalAlignment="Top" Width="262" Fill="#FF595959"/>
+            <Rectangle HorizontalAlignment="Left" Height="74" Margin="485,14,0,0" VerticalAlignment="Top" Width="515" Fill="#FF595959"/>
 
-            <ListView x:Name="lvMessages" HorizontalAlignment="Left" Height="172" Margin="10,10,0,0" VerticalAlignment="Top" Width="470" Background="#FF635A4E" Foreground="White">
+            <ListView x:Name="lvMessages" HorizontalAlignment="Left" Height="105" Margin="10,14,0,0" VerticalAlignment="Top" Width="470" Background="#FF635A4E" Foreground="White">
                 <ListViewItem Content="Player 1: Hi!" Margin="0" FontFamily="Franklin Gothic Book" Foreground="White"/>
             </ListView>
-            <TextBox x:Name="txtChat" HorizontalAlignment="Left" Height="31" Margin="10,187,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="470" Background="#FFAEAEAE" Foreground="Black"/>
-            <Button x:Name="btnRank" Content="Rankings" HorizontalAlignment="Left" Margin="1250,22,0,0" VerticalAlignment="Top" Width="118" Height="60" FontSize="16" BorderBrush="#FF747373" Foreground="White" BorderThickness="2" Background="#FF224F28">
+            <TextBox x:Name="txtChat" HorizontalAlignment="Left" Height="31" Margin="10,124,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="470" Background="#FFAEAEAE" Foreground="Black"/>
+            <Button x:Name="btnRank" Content="Rankings" HorizontalAlignment="Left" Margin="1007,14,0,0" VerticalAlignment="Top" Width="171" Height="89" FontSize="16" BorderBrush="#FF747373" Foreground="White" BorderThickness="2" Background="#FF224F28">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="8" Opacity="0.5" ShadowDepth="2"/>
                 </Button.Effect>
             </Button>
-            <Label x:Name="lblAngle" Content="ANGLE" HorizontalAlignment="Left" Margin="696,85,0,0" VerticalAlignment="Top" Foreground="#FFF3C72F" FontFamily="Franklin Gothic Demi" BorderThickness="0,2,0,0" Height="30" Width="75" FontSize="18"/>
-            <TextBlock x:Name="txtAngle" HorizontalAlignment="Left" Margin="776,93,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Background="White" Width="36" Height="22"/>
+            <Label x:Name="lblAngle" Content="ANGLE" HorizontalAlignment="Left" Margin="748,14,0,0" VerticalAlignment="Top" Foreground="#FFF3C72F" FontFamily="Franklin Gothic Demi" BorderThickness="0,2,0,0" Height="30" Width="76" FontSize="18"/>
+            <TextBlock x:Name="txtAngle" HorizontalAlignment="Left" Margin="828,22,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Background="White" Width="36" Height="22"/>
             <Label Content="Players waiting... 5" HorizontalAlignment="Left" Margin="1210,185,0,0" VerticalAlignment="Top" Background="{x:Null}" OpacityMask="White" Foreground="White" FontSize="20" FontFamily="Franklin Gothic Book"/>
-            <Label Content="GameState" HorizontalAlignment="Left" Margin="696,22,0,0" VerticalAlignment="Top" Width="225" FontFamily="Franklin Gothic Demi" FontSize="22" Background="#FF252525" Foreground="White" Height="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-            <Button x:Name="btnLeave" Content="Leave" HorizontalAlignment="Left" Margin="1250,93,0,0" VerticalAlignment="Top" Width="118" Height="60" FontSize="18" Foreground="White" BorderThickness="2" BorderBrush="#FF747373" Background="#FF224F28">
+            <Label Content="GameState" HorizontalAlignment="Left" Margin="492,20,0,0" VerticalAlignment="Top" Width="225" FontFamily="Franklin Gothic Demi" FontSize="22" Background="#FF252525" Foreground="White" Height="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <Button x:Name="btnLeave" Content="Leave" HorizontalAlignment="Left" Margin="1007,108,0,0" VerticalAlignment="Top" Width="171" Height="47" FontSize="18" Foreground="White" BorderThickness="2" BorderBrush="#FF747373" Background="#FF224F28">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="8" Opacity="0.5" ShadowDepth="2"/>
                 </Button.Effect>
             </Button>
-            <Label x:Name="lblPower" Content="POWER" HorizontalAlignment="Left" Margin="696,132,0,0" VerticalAlignment="Top" Foreground="#FFF3C72F" FontFamily="Franklin Gothic Demi" BorderThickness="0,2,0,0" Height="30" Width="75" FontSize="18"/>
-            <TextBlock x:Name="txtPower" HorizontalAlignment="Left" Margin="776,140,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Background="White" Width="36" Height="22"/>
-            <Label x:Name="lblWind" Content="WIND" HorizontalAlignment="Left" Margin="696,177,0,0" VerticalAlignment="Top" Foreground="#FFF3C72F" FontFamily="Franklin Gothic Demi" BorderThickness="0,2,0,0" Height="30" Width="75" FontSize="18"/>
-            <TextBlock x:Name="txtWind" HorizontalAlignment="Left" Margin="776,184,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Background="White" Width="36" Height="22"/>
-            <Slider x:Name="slAngle" HorizontalAlignment="Left" Margin="831,93,0,0" VerticalAlignment="Top" Width="90" Height="22"/>
-            <Slider x:Name="slPower" HorizontalAlignment="Left" Margin="831,140,0,0" VerticalAlignment="Top" Width="90" Height="22"/>
-            <Button x:Name="btnEnter" Content="Enter" HorizontalAlignment="Left" Margin="496,187,0,0" VerticalAlignment="Top" Width="118" Height="31" FontSize="16" BorderBrush="#FF747373" Foreground="White" BorderThickness="2" Background="#FF224F28" Click="btnEnter_Click">
+            <Label x:Name="lblPower" Content="POWER" HorizontalAlignment="Left" Margin="749,50,0,0" VerticalAlignment="Top" Foreground="#FFF3C72F" FontFamily="Franklin Gothic Demi" BorderThickness="0,2,0,0" Height="30" Width="75" FontSize="18"/>
+            <TextBlock x:Name="txtPower" HorizontalAlignment="Left" Margin="829,58,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Background="White" Width="36" Height="22"/>
+            <Slider x:Name="slAngle" HorizontalAlignment="Left" Margin="884,22,0,0" VerticalAlignment="Top" Width="90" Height="22" Maximum="180" Minimum="-180" ValueChanged="slAngle_ValueChanged"/>
+            <Slider x:Name="slPower" HorizontalAlignment="Left" Margin="884,58,0,0" VerticalAlignment="Top" Width="90" Height="22" Maximum="20" IsSnapToTickEnabled="True" ValueChanged="slPower_ValueChanged" TickPlacement="BottomRight"/>
+            <Button x:Name="btnEnter" Content="Enter" HorizontalAlignment="Left" Margin="485,124,0,0" VerticalAlignment="Top" Width="77" Height="31" FontSize="16" BorderBrush="#FF747373" Foreground="White" BorderThickness="2" Background="#FF224F28">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="8" Opacity="0.5" ShadowDepth="2"/>
                 </Button.Effect>
