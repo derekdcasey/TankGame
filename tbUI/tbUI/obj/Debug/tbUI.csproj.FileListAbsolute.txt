@@ -111,3 +111,4 @@ D:\Code\TankGame\tbUI\tbUI\obj\Debug\tbUI.csproj.GenerateResource.Cache
 D:\Code\TankGame\tbUI\tbUI\obj\Debug\tbUI.exe
 D:\Code\TankGame\tbUI\tbUI\obj\Debug\tbUI.pdb
 D:\Code\TankGame\tbUI\tbUI\obj\Debug\tbUI_Content.g.cs
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\tbUI_Content.g.cs

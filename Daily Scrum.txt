@@ -7,7 +7,7 @@ date and name
 3. Where do I need help from my teammate, teacher, or internet?
 
 2017/10/03 Alex
-<<<<<<< HEAD
+
 1. when the game ends display a message box that asks to play again, quit, or check high scores board
 
 
@@ -36,7 +36,7 @@ date and name
 1.worked on implementing the database, and finalized the ui
 2.I plan on starting the game logic
 3. i might need help finding a formula to get the direction of the tank barrell
->>>>>>> 366a28ffbe896a63b93f0eb540614d08c78904f8
+
 
 
 05/10/2017 Alex
@@ -68,3 +68,11 @@ date and name
 3.
 -correctly position graphics on the canvas
 -implement the lobby code with the state machine
+
+
+10/11/2017 Derek
+1.
+-Fixed the parabolic trajectory and added logic to the main project
+-trying to fix collision and canon ball instantiation
+2.continue working on collision and instantiation
+3.-implement the lobby code with the state machine

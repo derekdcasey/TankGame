@@ -15,31 +15,13 @@
             <RowDefinition Height="3*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <Canvas x:Name="c1" Grid.Row="0" Margin="0,0,0,165" Grid.RowSpan="2">
+
+        <Canvas x:Name="c1" Grid.Row="0" Margin="0,0,0,165" Grid.RowSpan="2" Height="574" Width="1194" Focusable="True">
 
             <Canvas.Background>
                 <ImageBrush ImageSource="TankGameBG.png"/>
             </Canvas.Background>
-            <Rectangle x:Name="rectCollider2" Height="40" Canvas.Left="538" Canvas.Top="379" Width="383" RenderTransformOrigin="0.5,0.5" Fill="#FF766470">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-138.518"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
-            <Rectangle x:Name="rectCollider1" Height="40" Canvas.Left="272" Canvas.Top="380" Width="383" RenderTransformOrigin="0.5,0.5" Fill="#FF76636E">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="-40.534"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
-            </Rectangle>
+            <Image Height="253" Canvas.Left="302" Canvas.Top="274" Width="598" Source="Mountain.png" Stretch="Fill"/>
             <Rectangle x:Name="rectP2_hp1_Copy" Height="59" Canvas.Left="1095" Canvas.Top="44" Width="14" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
                     <TransformGroup>
@@ -138,7 +120,7 @@
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Rectangle x:Name="ball_P2" Height="9" Canvas.Left="1085" Stroke="Black" Canvas.Top="475" Width="9" RadiusY="8" RadiusX="8">
+            <Rectangle x:Name="ball_P2" Height="9" Canvas.Left="1091" Stroke="Black" Canvas.Top="475" Width="9" RadiusY="8" RadiusX="8" RenderTransformOrigin="0.472,0.472">
                 <Rectangle.Fill>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black" Offset="0"/>
@@ -146,8 +128,7 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Image Height="253" Canvas.Left="302" Canvas.Top="274" Width="598" Source="Mountain.png" Stretch="Fill"/>
-            <Rectangle x:Name="rectGround" Height="68" Canvas.Top="507" Width="1194">
+            <Rectangle x:Name="Ground" Height="68" Canvas.Top="507" Width="1194">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="Ground.png"/>
                 </Rectangle.Fill>
@@ -264,7 +245,7 @@
                     <ImageBrush ImageSource="TankRight.png"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="P1Turret_Copy" Height="6" Canvas.Left="1069" Stroke="Black" Canvas.Top="477" Width="22" RenderTransformOrigin="1,0.472">
+            <Rectangle x:Name="P2Turret" Height="6" Canvas.Left="1069" Stroke="Black" Canvas.Top="477" Width="22" RenderTransformOrigin="1,0.472">
                 <Rectangle.Fill>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF516307" Offset="0"/>
@@ -272,23 +253,25 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="P2_tank" Height="50" Canvas.Left="1080" Stroke="Black" Canvas.Top="456" Width="73" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
-                <Rectangle.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="-1"/>
-                        <SkewTransform/>
-                        <RotateTransform/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Rectangle.RenderTransform>
+            <Rectangle x:Name="P2_tank" Height="50" Canvas.Left="1085" Stroke="Black" Canvas.Top="456" Width="72" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="TankRight.png"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Image x:Name="explosion" Height="100" Canvas.Left="277" Canvas.Top="527" Width="100" Source="explosion08.png" Visibility="Hidden"/>
+            <Image x:Name="explosion" Height="100" Canvas.Left="50" Canvas.Top="431" Width="100" Source="explosion08.png" Visibility="Hidden"/>
             <Image x:Name="smoke" Height="100" Canvas.Left="98" Canvas.Top="623" Width="100" Source="whitePuff01.png" Opacity="0.6" Visibility="Hidden"/>
+            <Rectangle x:Name="Ball_p1" Height="9" Canvas.Left="95" Stroke="Black" Canvas.Top="477" Width="10" RadiusY="4" RadiusX="4">
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF0CFF00" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Rectangle x:Name="mountain" Fill="#FF76636E" Height="218" Canvas.Left="586" Canvas.Top="288" Width="36"/>
 
         </Canvas>
+
         <Grid Grid.Row="1" Background="#FF3C3A38" Margin="0,20,0,0">
 
             <Rectangle HorizontalAlignment="Left" Height="74" Margin="485,14,0,0" VerticalAlignment="Top" Width="515" Fill="#FF595959"/>
@@ -313,8 +296,8 @@
             </Button>
             <Label x:Name="lblPower" Content="POWER" HorizontalAlignment="Left" Margin="749,50,0,0" VerticalAlignment="Top" Foreground="#FFF3C72F" FontFamily="Franklin Gothic Demi" BorderThickness="0,2,0,0" Height="30" Width="75" FontSize="18"/>
             <TextBlock x:Name="txtPower" HorizontalAlignment="Left" Margin="829,58,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Background="White" Width="36" Height="22"/>
-            <Slider x:Name="slAngle" HorizontalAlignment="Left" Margin="884,22,0,0" VerticalAlignment="Top" Width="90" Height="22" Maximum="180" Minimum="-180" ValueChanged="slAngle_ValueChanged"/>
-            <Slider x:Name="slPower" HorizontalAlignment="Left" Margin="884,58,0,0" VerticalAlignment="Top" Width="90" Height="22" Maximum="20" IsSnapToTickEnabled="True" ValueChanged="slPower_ValueChanged" TickPlacement="BottomRight"/>
+            <Slider x:Name="slAngle" HorizontalAlignment="Left" Margin="884,22,0,0" VerticalAlignment="Top" Width="90" Height="22" Maximum="180" Minimum="-180" />
+            <Slider x:Name="slPower" HorizontalAlignment="Left" Margin="884,58,0,0" VerticalAlignment="Top" Width="90" Height="22" Maximum="20" IsSnapToTickEnabled="True" TickPlacement="BottomRight"/>
             <Button x:Name="btnEnter" Content="Enter" HorizontalAlignment="Left" Margin="485,124,0,0" VerticalAlignment="Top" Width="77" Height="31" FontSize="16" BorderBrush="#FF747373" Foreground="White" BorderThickness="2" Background="#FF224F28">
                 <Button.Effect>
                     <DropShadowEffect BlurRadius="8" Opacity="0.5" ShadowDepth="2"/>
