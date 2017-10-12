@@ -63,7 +63,7 @@ namespace tbUI
          
 
             db = new Database();
-            db.OpenConnection();
+           // db.OpenConnection();
             //ReloadListView();
 
             //////////////////////////////////////////LOGIC
@@ -119,15 +119,10 @@ namespace tbUI
 
         void PlayExplosionSound()
         {
-<<<<<<< HEAD
+
           
-                SoundPlayer exSound = new SoundPlayer(@"D:\Code\TankGame\tbUI\tbUI\explosion09.wav");
-=======
-            if (playSound == false)
-            {
-                playSound = true;
-                SoundPlayer exSound = new SoundPlayer(@"C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\explosion09.wav");
->>>>>>> f92d51b8ae4fef150fb4c876428e74e155685a87
+                SoundPlayer exSound = new SoundPlayer("explosion09.wav");
+
                 exSound.Play();
             
         }
@@ -187,7 +182,43 @@ namespace tbUI
                     MoveImage();
                 
             }
-       
+
+            //If ball goes off the screen
+           Point BallPos = Ball_p1.PointToScreen(new Point(0, 0));
+
+            if (BallPos.X > 2000 || BallPos.Y < 0)
+            {
+                p1BallHasCollided = true;
+
+                PlayExplosionSound();
+                
+                hasFired = false;
+                Ball_p1.Margin = new Thickness(0, 0, 0, 0);
+                Canvas.SetLeft(Ball_p1, 95);
+                Canvas.SetTop(Ball_p1, 477);
+
+                //TODO set player 2s turn
+
+                //debug timer for now
+
+                reset.Tick += resetCollider;
+                reset.Interval = TimeSpan.FromSeconds(3);
+                reset.Start();
+
+                t = 0;
+
+                newLocationX = 0;
+                newLocationY = 0;
+                speed = 0;
+            }
+
+
+
+
+
+
+
+
 
 
 
@@ -429,11 +460,9 @@ namespace tbUI
                     da.To = 0;
                     da.Duration = new Duration(TimeSpan.FromSeconds(1));
                     smoke.BeginAnimation(OpacityProperty, da);
-<<<<<<< HEAD
-                    SoundPlayer shootSOund = new SoundPlayer(@"D:\Code\TankGame\tbUI\tbUI\explosion01.wav");
-=======
-                    SoundPlayer shootSOund = new SoundPlayer(@"C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\explosion01.wav");
->>>>>>> f92d51b8ae4fef150fb4c876428e74e155685a87
+
+                    SoundPlayer shootSOund = new SoundPlayer("explosion01.wav");
+
                     shootSOund.Play();
 
 
@@ -478,11 +507,16 @@ namespace tbUI
 
         }
 
- 
+        private void c1_LostFocus(object sender, RoutedEventArgs e)
+        {
+            
+        }
 
-     
 
-     
+
+
+
+
 
 
 

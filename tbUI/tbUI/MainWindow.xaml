@@ -21,6 +21,8 @@
             <Canvas.Background>
                 <ImageBrush ImageSource="TankGameBG.png"/>
             </Canvas.Background>
+            <Rectangle x:Name="mountain" Fill="#FF76636E" Height="218" Canvas.Left="586" Canvas.Top="288" Width="36"/>
+
             <Image Height="253" Canvas.Left="302" Canvas.Top="274" Width="598" Source="Mountain.png" Stretch="Fill"/>
             <Rectangle x:Name="rectP2_hp1_Copy" Height="59" Canvas.Left="1095" Canvas.Top="44" Width="14" RenderTransformOrigin="0.5,0.5">
                 <Rectangle.RenderTransform>
@@ -268,7 +270,6 @@
                     </LinearGradientBrush>
                 </Rectangle.Fill>
             </Rectangle>
-            <Rectangle x:Name="mountain" Fill="#FF76636E" Height="218" Canvas.Left="586" Canvas.Top="288" Width="36"/>
 
         </Canvas>
 

@@ -6,21 +6,13 @@ using System.Threading.Tasks;
 
 namespace tbUI
 {
-    class Globals
+    public class Globals
     {
-        static int currentUserID;
+        public static Game game { get; set; }
+        public static ActivePlayer player { get; set; }
 
-        //getter setter currentUserID
-        public static int CurrentUserID
-        {
-            get
-            {
-                return currentUserID;
-            }
-            set
-            {
-                currentUserID = value;
-            }
-        }
+
     }
 }
+
+
