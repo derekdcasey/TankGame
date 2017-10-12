@@ -56,7 +56,7 @@ date and name
 3.tweaking image locations/formulas
 
 07/10/2017 Alex
-1. researched state machine for c# and SQL
+1. researched state machinne for c# and SQL
 2. try to create classes and triggers in SQL for state machine
 3. research proper implementation of triggers
 
@@ -70,25 +70,9 @@ date and name
 -implement the lobby code with the state machine
 
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f92d51b8ae4fef150fb4c876428e74e155685a87
 10/11/2017 Derek
 1.
 -Fixed the parabolic trajectory and added logic to the main project
 -trying to fix collision and canon ball instantiation
 2.continue working on collision and instantiation
 3.-implement the lobby code with the state machine
-<<<<<<< HEAD
-=======
-
-
-11/10/2017 Alex
-
-1. make enums for state machine 
-2. 
-3. research state machine
-
-
->>>>>>> f92d51b8ae4fef150fb4c876428e74e155685a87

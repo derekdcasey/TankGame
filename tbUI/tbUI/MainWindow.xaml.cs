@@ -119,8 +119,15 @@ namespace tbUI
 
         void PlayExplosionSound()
         {
+<<<<<<< HEAD
           
                 SoundPlayer exSound = new SoundPlayer(@"D:\Code\TankGame\tbUI\tbUI\explosion09.wav");
+=======
+            if (playSound == false)
+            {
+                playSound = true;
+                SoundPlayer exSound = new SoundPlayer(@"C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\explosion09.wav");
+>>>>>>> f92d51b8ae4fef150fb4c876428e74e155685a87
                 exSound.Play();
             
         }
@@ -422,7 +429,11 @@ namespace tbUI
                     da.To = 0;
                     da.Duration = new Duration(TimeSpan.FromSeconds(1));
                     smoke.BeginAnimation(OpacityProperty, da);
+<<<<<<< HEAD
                     SoundPlayer shootSOund = new SoundPlayer(@"D:\Code\TankGame\tbUI\tbUI\explosion01.wav");
+=======
+                    SoundPlayer shootSOund = new SoundPlayer(@"C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\explosion01.wav");
+>>>>>>> f92d51b8ae4fef150fb4c876428e74e155685a87
                     shootSOund.Play();
 
 

@@ -5,3 +5,10 @@ D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficL
 D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.csproj.CoreCompileInputs.cache
 D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.exe
 D:\Documents\IPD-10\DotNET Development\Sources\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.pdb
+D:\Alex\DotNET Development\Sources\TankBusters\TrafficLightStateMachine\TrafficLightStateMachine\bin\Debug\TrafficLightStateMachine.exe.config
+D:\Alex\DotNET Development\Sources\TankBusters\TrafficLightStateMachine\TrafficLightStateMachine\bin\Debug\TrafficLightStateMachine.exe
+D:\Alex\DotNET Development\Sources\TankBusters\TrafficLightStateMachine\TrafficLightStateMachine\bin\Debug\TrafficLightStateMachine.pdb
+D:\Alex\DotNET Development\Sources\TankBusters\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.csprojResolveAssemblyReference.cache
+D:\Alex\DotNET Development\Sources\TankBusters\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.csproj.CoreCompileInputs.cache
+D:\Alex\DotNET Development\Sources\TankBusters\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.exe
+D:\Alex\DotNET Development\Sources\TankBusters\TrafficLightStateMachine\TrafficLightStateMachine\obj\Debug\TrafficLightStateMachine.pdb
