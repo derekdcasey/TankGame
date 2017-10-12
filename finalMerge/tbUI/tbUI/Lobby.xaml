@@ -12,9 +12,6 @@
             <ColumnDefinition Width="392*"/>
             <ColumnDefinition Width="249*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock x:Name="txtPlayer1" HorizontalAlignment="Left" Margin="172,34,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="25" Width="75" Grid.Column="1"/>
-        <TextBlock x:Name="txtPlayer2" HorizontalAlignment="Left" Margin="341,34,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="25" Width="75" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <TextBlock x:Name="txtGameState" HorizontalAlignment="Left" Margin="131.086,34,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="25" Width="75" Grid.Column="2"/>
         <Label x:Name="txtStatus" Content="Label" HorizontalAlignment="Left" Margin="52,231,0,0" VerticalAlignment="Top" Height="112" Width="572" FontSize="72" Visibility="Hidden" Grid.ColumnSpan="3"/>
         <TextBox x:Name="txtPlayerName" HorizontalAlignment="Left" Height="23" Margin="36,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2"/>
         <Button x:Name="btnLogin" Content="Login" HorizontalAlignment="Left" Margin="36,117,0,0" VerticalAlignment="Top" Width="120" Height="29" Grid.ColumnSpan="2" Click="btnLogin_Click"/>
@@ -41,7 +38,6 @@
         <TextBox x:Name="txtMessage" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="158,236,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="396" Grid.ColumnSpan="2"/>
         <Button x:Name="btnEnterChat" Content="Enter" Grid.Column="2" HorizontalAlignment="Left" Margin="167.086,237,0,0" VerticalAlignment="Top" Width="75" Click="btnEnterChat_Click"/>
         <TextBlock x:Name="tbPlayerId" Grid.Column="1" HorizontalAlignment="Left" Margin="210,304,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
-        <Label x:Name="lblCurrentId" Grid.ColumnSpan="2" Content="Label" HorizontalAlignment="Left" Margin="66,382,0,0" VerticalAlignment="Top" Width="100" Height="54"/>
         <Button x:Name="btnJoinGame" Content="Join Game" HorizontalAlignment="Left" Margin="36,240,0,0" VerticalAlignment="Top" Width="120" Height="29" Grid.ColumnSpan="2" Click="btnJoinGame_Click"/>
         <Button x:Name="btnRefresh" Content="Enter" Grid.Column="2" HorizontalAlignment="Left" Margin="167.086,330,0,0" VerticalAlignment="Top" Width="39" Click="btnRefresh_Click"/>
 

@@ -17,6 +17,9 @@ namespace tbUI
 
         public Message(String strMessage)
         {
+
+
+
             // parse message                   
             string strShootAngle = shootAngle.ToString();
             string strShootSpeed = shootSpeed.ToString();

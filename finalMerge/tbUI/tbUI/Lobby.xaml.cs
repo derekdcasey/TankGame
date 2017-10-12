@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -36,16 +37,90 @@ namespace tbUI
         public lobby()
         {
             db = new Database();
+
             InitializeComponent();
+
             ReloadPlayerList();
             ReloadGameList();
             ReloadChatView();
+
             p = new ActivePlayer();
+
             lobbyTimer.Tick += LobbyLoop;
             lobbyTimer.Interval = TimeSpan.FromMilliseconds(20);
             lobbyTimer.Start();
+
+            ActionTimer.Tick += ActionTimerLoop;
+            ActionTimer.Interval = TimeSpan.FromSeconds(1);
+            ActionTimer.Start();
+
         }
 
+        private void ActionTimerLoop(object sender, EventArgs e)
+        {
+
+            Message msg = new Message(db.ReadCurrentAction(Globals.game));
+
+            if (msg != null)
+            {
+                if (Globals.player.PlayerNumber == 1)
+                {
+                    switch (msg.Action)
+                    {
+                        case ActionType.Ready:
+                            { // other player joined the game
+                                Globals.game.P2Action = "Ready";
+                                break;
+                            }
+                        case ActionType.Shooting:
+                            {
+
+                                Globals.game.P2Action = "Shooting";
+                                break;
+                            }
+                        case ActionType.Exitedgame:
+                            {
+                                Globals.game.P2Action = "Exitedgame";
+                                break;
+                            }
+                        case ActionType.Gameover:
+                            {
+                                Globals.game.P2Action = "Gameover";
+                                break;
+                            }
+                        default: throw new ArgumentNullException();
+                    }
+                }
+                else if (Globals.player.PlayerNumber == 2)
+                {
+                    switch (msg.Action)
+                    {
+                        case ActionType.Ready:
+                            { // other player joined the game
+                                Globals.game.P1Action = "Ready";
+                                break;
+                            }
+                        case ActionType.Shooting:
+                            {
+
+                                Globals.game.P1Action = "Shooting";
+                                break;
+                            }
+                        case ActionType.Exitedgame:
+                            {
+                                Globals.game.P1Action = "Exitedgame";
+                                break;
+                            }
+                        case ActionType.Gameover:
+                            {
+                                Globals.game.P1Action = "Gameover";
+                                break;
+                            }
+                        default: throw new ArgumentNullException();
+                    }
+                }
+            }
+        }
 
         private void LobbyLoop(object sender, EventArgs e)
         {
@@ -92,81 +167,13 @@ namespace tbUI
 
 
         //timer caller 
-        public void ActionTimerCall(Game g)
-        {
-            // this method is called every 3 seconds
-
-            Message msg = new Message(db.ReadCurrentAction(g));
-
-            if (msg != null)
-            {
-                if (Globals.player.PlayerNumber == 1)
-                {
-                    switch (msg.Action)
-                    {
-                        case ActionType.Ready:
-                            { // other player joined the game
-                                db.UpdateAction(g);
-                                break;
-                            }
-                        case ActionType.Shooting:
-                            {
-
-                                db.UpdateAction(g);
-                                break;
-                            }
-                        case ActionType.Exitedgame:
-                            {
-                                db.UpdateAction(g);
-                                break;
-                            }
-                        case ActionType.Gameover:
-                            {
-                                db.UpdateAction(g);
-                                break;
-                            }
-                        default: throw new ArgumentNullException();
-                    }
-                }
-                else if (Globals.player.PlayerNumber == 2)
-                {
-                    switch (msg.Action)
-                    {
-                        case ActionType.Ready:
-                            { // other player joined the game
-                                db.UpdateAction(g);
-                                break;
-                            }
-                        case ActionType.Shooting:
-                            {
-
-                                db.UpdateAction(g);
-                                break;
-                            }
-                        case ActionType.Exitedgame:
-                            {
-                                db.UpdateAction(g);
-                                break;
-                            }
-                        case ActionType.Gameover:
-                            {
-                                db.UpdateAction(g);
-                                break;
-                            }
-                        default: throw new ArgumentNullException();
-                    }
-                }
-            }
-            // other things to do in the timer?
-
-        }
-
+      
 
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
 
-            p.username = txtPlayerName.Text;
+           
 
             db.AddPlayer(p);
 
@@ -174,7 +181,27 @@ namespace tbUI
 
             ReloadPlayerList();
 
+
+            if (Regex.IsMatch(p.username, "^[a-zA-Z0-9]+$"))
+            {
+                    
+               
+                if (p.username.Length < 3 || p.username.Length > 15)
+                    MessageBox.Show("Username must be between 3 and 15 characters long.", "Username Entry Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                else
+                    p.username = txtPlayerName.Text;
+            }
+            else
+            {
+                MessageBox.Show("Username must be in letters and number with no spaces", "Username Entry Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+
         }
+
+
+                
+                
+              
 
 
 
