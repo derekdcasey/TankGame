@@ -12,7 +12,7 @@ date and name
 
 
 
-
+=======================================================================
 
 
 2017/10/04 Derek
@@ -20,46 +20,44 @@ date and name
 2. 	-Start coding basic gameplay elements
 	-add 6 user stories, and break them down
 3. Going to need help on the final layout design, as well as how to deal with multiplayer
-
-=======
 - when the game ends display a message box that asks to play again, quit, or check high scores board
 - WAITING FOR OTHER PLAYER message across screen at beginning
-
+==============================================================================
 2017/10/04 Alex
 1. Designed state machine. updated database tables and project proposal.
 2. Connect WPF page to Azure database. Create at least 6 user stories.  
 3. How to connect two instances of the game together
-
+=======================================================================
 
 10/5/2017 Derek
 
 1.worked on implementing the database, and finalized the ui
 2.I plan on starting the game logic
 3. i might need help finding a formula to get the direction of the tank barrell
-
+=======================================================================
 
 
 05/10/2017 Alex
 1. Completed login page with validation
 2. start working on state machine
 3. research dispatchertimer
-
+=======================================================================
 
 06/10/2017 Alex
 1. researched dispatcher timer, attempted to make relevant SQL statements
 2. try to implement state machine
 3. research proper implementation of state machine in C# and SQL
-
+=======================================================================
 05-06/10/2017 Derek
 1.Started game logic, rotating the player controller and firing a projectile
 2.research how to implement gravity and collision
 3.tweaking image locations/formulas
-
+=======================================================================
 07/10/2017 Alex
 1. researched state machine for c# and SQL
 2. try to create classes and triggers in SQL for state machine
 3. research proper implementation of triggers
-
+=======================================================================
 
 10/10/2017 Derek
 
@@ -68,7 +66,7 @@ date and name
 3.
 -correctly position graphics on the canvas
 -implement the lobby code with the state machine
-
+=======================================================================
 
 
 10/11/2017 Derek
@@ -77,7 +75,7 @@ date and name
 -trying to fix collision and canon ball instantiation
 2.continue working on collision and instantiation
 3.-implement the lobby code with the state machine
-
+=======================================================================
 
 
 11/10/2017 Alex
@@ -85,26 +83,23 @@ date and name
 1. make enums for state machine 
 2. write message class and reader method to access messages
 3. research state machine
-
-
-<<<<<<< HEAD
->>>>>>> f92d51b8ae4fef150fb4c876428e74e155685a87
+=======================================================================
 
 12/10/2017 Alex
 1. Done -wrote reader method, created message class
 not done- properly created constructor for message class
 2. properly implement message class constructor
 3. help using switch case with messages and enums
-
+=======================================================================
 13/10/2017 Alex
 1. done - started writing switch case for state machine 
 not done - properly implemented state machine
 2. work on switch case with enums to get state machine working
 3. how to make enums send updates to database
-=======
+=======================================================================
 10/13/2017 DEREK
 1.worked on the Lobby redesign
 2.continue merging game with server logic
 3.merging game with server logic
->>>>>>> 4ca9ef7ba13de6626ff2b98014229fa08cde6f44
+
 
