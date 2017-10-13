@@ -58,19 +58,16 @@
     <Compile Include="Database.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Globals.cs" />
-    <Compile Include="Lobby.xaml.cs">
-      <DependentUpon>Lobby.xaml</DependentUpon>
-    </Compile>
     <Compile Include="LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="Lobby.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="LoginPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainLobby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -79,6 +76,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainLobby.xaml.cs">
+      <DependentUpon>MainLobby.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -126,6 +126,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="explosion01.wav" />
+    <Resource Include="TankL.png" />
+    <Resource Include="tabletop-players.png" />
+    <Resource Include="TB_logo.png" />
     <Resource Include="explosion08.png" />
     <Content Include="explosion09.wav" />
     <Resource Include="whitePuff01.png" />

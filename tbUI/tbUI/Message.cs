@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tbUI
 {
-    public enum ActionType { Ready, Shooting, Gameover, Exitedgame }
+    public enum ActionType { Ready, Shooting, Gameover, Exitedgame, Turn, Waiting }
 
     public class Message
     {
@@ -15,17 +15,31 @@ namespace tbUI
 
         public ActionType Action;
 
+        // received a message
         public Message(String strMessage)
         {
-            // parse message                   
-            string strShootAngle = shootAngle.ToString();
-            string strShootSpeed = shootSpeed.ToString();
-            string[] fired = { strShootAngle, strShootSpeed };
-            strMessage = (string.Join(",", fired));
-            string strAction = Action.ToString();
-            ActionType ActionTaken = (ActionType)Enum.Parse(typeof(ActionType), strAction);
-            strMessage = ActionTaken.ToString();
+
+            string []strData = strMessage.Split(',');
+            switch (Enum.Parse(typeof(ActionType), strData[0]))
+            {
+                case ActionType.Shooting:
+                    Action = ActionType.Shooting;
+                    shootAngle = double.Parse(strData[1]);
+                    shootSpeed = double.Parse(strData[1]);
+                    break;
+
+            }
+
         }
 
+        public static string makeShootMessage(double speed, double angle)
+        {
+            return String.Format("{0},{1},{2}", ActionType.Shooting, angle, speed);
+        }
+
+        //public static string makeGameOverMessage()
+        //{
+        //    //
+        //}
     }
 }
