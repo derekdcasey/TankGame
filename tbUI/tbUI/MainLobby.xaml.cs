@@ -26,17 +26,19 @@ namespace tbUI
 
 
 
-    public partial class lobby : Window
+    public partial class MainLobby : Window
     {
         Database db;
 
         ActivePlayer p;
         DispatcherTimer lobbyTimer = new DispatcherTimer();
         DispatcherTimer ActionTimer = new DispatcherTimer();
-        public lobby()
+
+        public MainLobby()
         {
             db = new Database();
             InitializeComponent();
+
             ReloadPlayerList();
             ReloadGameList();
             ReloadChatView();
@@ -57,12 +59,12 @@ namespace tbUI
 
         void ReloadPlayerList()
         {
+            lvUsers.Items.Clear();
             List<ActivePlayer> pList = db.GetAllPlayers();
-            lvActivePlayers.Items.Clear();
 
             foreach (ActivePlayer p in pList)
             {
-                lvActivePlayers.Items.Add(p);
+                lvUsers.Items.Add(p);
             }
         }
 
@@ -92,11 +94,11 @@ namespace tbUI
 
 
         //timer caller 
-        public void ActionTimerCall(Game g)
+        public void ActionTimerCall()
         {
             // this method is called every 3 seconds
 
-            Message msg = new Message(db.ReadCurrentAction(g));
+            Message msg = new Message(db.ReadCurrentAction(Globals.game));
 
             if (msg != null)
             {
@@ -106,23 +108,35 @@ namespace tbUI
                     {
                         case ActionType.Ready:
                             { // other player joined the game
-                                db.UpdateAction(g);
+
+
+
                                 break;
                             }
                         case ActionType.Shooting:
                             {
 
-                                db.UpdateAction(g);
+
                                 break;
                             }
                         case ActionType.Exitedgame:
                             {
-                                db.UpdateAction(g);
+
                                 break;
                             }
                         case ActionType.Gameover:
                             {
-                                db.UpdateAction(g);
+
+                                break;
+                            }
+                        case ActionType.Turn:
+                            {
+
+                                break;
+                            }
+                        case ActionType.Waiting:
+                            {
+
                                 break;
                             }
                         default: throw new ArgumentNullException();
@@ -133,24 +147,33 @@ namespace tbUI
                     switch (msg.Action)
                     {
                         case ActionType.Ready:
-                            { // other player joined the game
-                                db.UpdateAction(g);
+                            {
                                 break;
                             }
                         case ActionType.Shooting:
                             {
 
-                                db.UpdateAction(g);
+
                                 break;
                             }
                         case ActionType.Exitedgame:
                             {
-                                db.UpdateAction(g);
+
                                 break;
                             }
                         case ActionType.Gameover:
                             {
-                                db.UpdateAction(g);
+
+                                break;
+                            }
+                        case ActionType.Turn:
+                            {
+
+                                break;
+                            }
+                        case ActionType.Waiting:
+                            {
+
                                 break;
                             }
                         default: throw new ArgumentNullException();
@@ -161,52 +184,9 @@ namespace tbUI
 
         }
 
-
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-
-            p.username = txtPlayerName.Text;
-
-            db.AddPlayer(p);
-
-            p.id = db.GetCurrentPlayer(p).id;
-
-            ReloadPlayerList();
-
-        }
-
-
-
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            //delete only if 
-            if (p.username != null)
-            {
-                db.DeleteMsgs(p.username);
-            }
-            //delete player by id when window closed
-            db.DeletePlayer(p.id);
-        }
-
-
-        private void btnCreateGame_Click(object sender, RoutedEventArgs e)
-        {
-            Game g = new Game();
-
-            Globals.game = g;
-            g.P1Action = "waiting";
-            //  Globals.player = p;           
-            p.PlayerNumber = 1;
-            db.AddGame2(p, g);
-            MessageBox.Show("Add Globals" + p.PlayerNumber);
-            ReloadGameList();
-
-        }
-
-
-
-
+        
+     
+        
         private void lvGames_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Game g = (Game)lvGames.SelectedItem;
@@ -214,25 +194,20 @@ namespace tbUI
         }
 
 
-
-        private void btnEnterChat_Click(object sender, RoutedEventArgs e)
+        private void lvActivePlayers_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string msg = txtMessage.Text;
+            //ActivePlayer p = (ActivePlayer)lvUsers.SelectedItem;
+            //tbPlayerId.Text = p.id.ToString();
+        }
+
+        private void btnEnterChat_Click_1(object sender, RoutedEventArgs e)
+        {
+            string msg = txtChatEnter.Text;
             db.AddMessage(p.username, msg);
             ReloadChatView();
         }
 
-
-
-        private void lvActivePlayers_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ActivePlayer p = (ActivePlayer)lvActivePlayers.SelectedItem;
-            tbPlayerId.Text = p.id.ToString();
-        }
-
-
-
-        private void btnJoinGame_Click(object sender, RoutedEventArgs e)
+        private void btnJoin_Click(object sender, RoutedEventArgs e)
         {
             Game g = (Game)lvGames.SelectedItem;
 
@@ -241,16 +216,58 @@ namespace tbUI
 
         }
 
-
-
-        private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
         {
-            Game g = (Game)lvGames.SelectedItem;
-            ReloadPlayerList();
+            Game g = new Game();
 
+            Globals.game = g;
+            g.P1Action = "waiting";
+            g.P2Action = "waiting";
+            //  Globals.player = p;           
+            p.PlayerNumber = 1;
+            db.AddGame2(p, g);
+            MessageBox.Show("Add Globals" + p.PlayerNumber);
             ReloadGameList();
-            //TODO: store game in variable
-            MessageBox.Show(db.ReadCurrentAction(g));
         }
+
+        private void btnStart_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click_1(object sender, RoutedEventArgs e)
+        {
+            p.username = txtUsername.Text;
+
+            db.AddPlayer(p);
+
+            p.id = db.GetCurrentPlayer(p).id;
+
+            ReloadPlayerList();
+        }
+
+        private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            //delete only if 
+            if (p.username != null)
+            {
+                db.DeleteMsgs(p.username);
+                db.DeletePlayer(p.id);
+            }
+            //delete player by id when window closed
+            db.DeletePlayer(p.id);
+        }
+
+
+
+        //private void btnRefresh_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Game g = (Game)lvGames.SelectedItem;
+        //    ReloadPlayerList();
+
+        //    ReloadGameList();
+        //    //TODO: store game in variable
+        //    MessageBox.Show(db.ReadCurrentAction(g));
+        //}
     }
 }

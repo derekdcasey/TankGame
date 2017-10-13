@@ -132,3 +132,5 @@ C:\Users\ipd.BH210-05\Desktop\tbUI\tbUI\obj\Debug\tbUI.exe
 C:\Users\ipd.BH210-05\Desktop\tbUI\tbUI\obj\Debug\tbUI.pdb
 C:\Users\ipd.BH210-05\Desktop\tbUI\tbUI\obj\Debug\Lobby.g.cs
 C:\Users\ipd.BH210-05\Desktop\tbUI\tbUI\obj\Debug\Lobby.baml
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\MainLobby.g.cs
+C:\Users\ipd\Repos\TankBusters\tbUI\tbUI\obj\Debug\MainLobby.baml

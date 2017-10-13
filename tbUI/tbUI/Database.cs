@@ -135,11 +135,12 @@ namespace tbUI
         public void AddGame2(ActivePlayer p, Game g)
         {
 
-            SqlCommand insertCommand = new SqlCommand("INSERT INTO Game (P1id, P1Action) VALUES (@id, @p1)", conn);
+            SqlCommand insertCommand = new SqlCommand("INSERT INTO Game (P1id, P1Action, P2Action) VALUES (@id, @p1, @p2)", conn);
             // In the command, there are some parameters denoted by @, you can 
             // change their value on a condition, in my code they're hardcoded.
             insertCommand.Parameters.Add(new SqlParameter("id", p.id));
             insertCommand.Parameters.Add(new SqlParameter("p1", g.P1Action));
+            insertCommand.Parameters.Add(new SqlParameter("p2", g.P2Action));
             // Execute the command, and print the values of the columns affected through
             // the command executed.
             insertCommand.ExecuteNonQuery();
