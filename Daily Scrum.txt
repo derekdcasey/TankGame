@@ -70,18 +70,14 @@ date and name
 -implement the lobby code with the state machine
 
 
-<<<<<<< HEAD
-=======
-=======
->>>>>>> f92d51b8ae4fef150fb4c876428e74e155685a87
+
 10/11/2017 Derek
 1.
 -Fixed the parabolic trajectory and added logic to the main project
 -trying to fix collision and canon ball instantiation
 2.continue working on collision and instantiation
 3.-implement the lobby code with the state machine
-<<<<<<< HEAD
-=======
+
 
 
 11/10/2017 Alex
@@ -91,4 +87,8 @@ date and name
 3. research state machine
 
 
->>>>>>> f92d51b8ae4fef150fb4c876428e74e155685a87
+10/13/2017 DEREK
+1.worked on the Lobby redesign
+2.continue merging game with server logic
+3.merging game with server logic
+
