@@ -87,8 +87,21 @@ date and name
 11/10/2017 Alex
 
 1. make enums for state machine 
-2. 
+2. write message class and reader method to access messages
 3. research state machine
 
 
 >>>>>>> f92d51b8ae4fef150fb4c876428e74e155685a87
+
+12/10/2017 Alex
+1. Done -wrote reader method, created message class
+not done- properly created constructor for message class
+2. properly implement message class constructor
+3. help using switch case with messages and enums
+
+13/10/2017 Alex
+1. done - started writing switch case for state machine 
+not done - properly implemented state machine
+2. work on switch case with enums to get state machine working
+3. how to make enums send updates to database
+
