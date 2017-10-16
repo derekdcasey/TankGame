@@ -102,4 +102,9 @@ not done - properly implemented state machine
 2.continue merging game with server logic
 3.merging game with server logic
 
+========================================================================
 
+16/10/2017 Alex
+1. tried to get message class to function
+2. work on powerpoint presentation
+3. need help getting message class working

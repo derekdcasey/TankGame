@@ -54,13 +54,9 @@ namespace tbUI
             {
                 while (reader.Read())
                 {
-
-
                     p.id = (int)reader["Id"];
                     p.username = (string)reader["Username"];
                     p.timestamp = (DateTime)reader["TimeStamp"];
-
-
                 }
                 return p;
             }
@@ -93,8 +89,6 @@ namespace tbUI
             insertCommand.ExecuteNonQuery();
 
         }
-
-
 
 
         public void DeletePlayer(int id)

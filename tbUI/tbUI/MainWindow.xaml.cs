@@ -214,21 +214,6 @@ namespace tbUI
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             switch (currentKey)
             {
                 case "up":
@@ -241,8 +226,6 @@ namespace tbUI
                     break;
 
 
-
-
                 case "down":
                     
                         rotateRadian += 1.0;
@@ -251,8 +234,6 @@ namespace tbUI
                     txtAngle.Text = rotateRadian.ToString();
                     
                     break;
-
-
                
 
             }
@@ -270,14 +251,6 @@ namespace tbUI
         }
 
       
-
-
-
-
-
-
-
-
 
 
 

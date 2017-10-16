@@ -108,35 +108,32 @@ namespace tbUI
                     {
                         case ActionType.Ready:
                             { // other player joined the game
-
-
-
-                                break;
+                                Message.MakeReadyMessage();
+                               break;
                             }
                         case ActionType.Shooting:
                             {
-
-
+                             //   Message.MakeShootMessage();
                                 break;
                             }
                         case ActionType.Exitedgame:
                             {
-
+                                Message.MakeExitedMessage();
                                 break;
                             }
                         case ActionType.Gameover:
                             {
-
+                                Message.MakeGameOverMessage();
                                 break;
                             }
                         case ActionType.Turn:
                             {
-
+                                Message.MakeTurnMessage();
                                 break;
                             }
                         case ActionType.Waiting:
                             {
-
+                                Message.MakeWaitingMessage();
                                 break;
                             }
                         default: throw new ArgumentNullException();
@@ -148,32 +145,32 @@ namespace tbUI
                     {
                         case ActionType.Ready:
                             {
+                                Message.MakeReadyMessage();
                                 break;
                             }
                         case ActionType.Shooting:
                             {
-
-
+                              //  Message.MakeShootMessage();
                                 break;
                             }
                         case ActionType.Exitedgame:
                             {
-
+                                Message.MakeExitedMessage();
                                 break;
                             }
                         case ActionType.Gameover:
                             {
-
+                                Message.MakeGameOverMessage();
                                 break;
                             }
                         case ActionType.Turn:
                             {
-
+                                Message.MakeTurnMessage();
                                 break;
                             }
                         case ActionType.Waiting:
                             {
-
+                                Message.MakeWaitingMessage();
                                 break;
                             }
                         default: throw new ArgumentNullException();
